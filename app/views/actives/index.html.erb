@@ -1,0 +1,10 @@
+<h1>All Actives</h1>
+
+<ul id="actives">
+  <% @actives.each do |active| %>
+    <li>
+      <%= link_to active.title, active_path(active), class:'active_titile', id:"active_{active_id}" %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Create a New Active", new_active_path, class: "new_active" %>

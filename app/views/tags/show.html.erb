@@ -1,0 +1,7 @@
+<h1>Actives Tagged with <%= @tag.name %></h1>
+
+<ul>
+  <% @tag.actives.each do |active| %>
+    <li><%= link_to active.title, active_path(active) %></li>
+  <% end %>
+</ul>

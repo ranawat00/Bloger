@@ -1,0 +1,21 @@
+<h1><%= @active.title %></h1>
+<p><%= @active.body %></p>
+<%= link_to "Back to Actives List", actives_path %><br />
+<%= link_to "delete", active_path(@active), method: :delete ,data: {confirm: "Really delete the article?"}%><br />
+<%= link_to "edit", edit_active_path(@active) %>
+
+<h3>Comments (<%= @active.comments.size %>)</h3>
+<%= render partial: 'actives/comment', collection: @active.comments %>
+
+<%= render partial: 'comments/form' %>
+
+<p>
+  Tags:
+  <% @active.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
+
+<%= image_tag @active.photo, size: "300x200" %>
+
+<p><%#= image_tag @active.image.url %></p>
